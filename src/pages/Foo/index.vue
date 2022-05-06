@@ -22,12 +22,13 @@
 </template>
 
 <script setup lang="ts">
-  let size = $(useStorage('size', 200))
+  import type { Ref } from 'vue'
+  let size: Ref<number> = ref(useStorage('size', 200))
   const lagerHandler = () => {
-    size += 20
+    size.value += 20
   }
   const resetHandler = () => {
-    size = 100
+    size.value = 100
   }
 
 </script>
