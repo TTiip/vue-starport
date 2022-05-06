@@ -1,7 +1,7 @@
 <template>
   <div :style="style">
     <!-- 这里的 v-bind 绑定attrs 将外部传入的属性绑定到 slot 对应的组件上 -->
-    <slot v-bind="metadata.attrs" />
+    <slot v-bind="{...metadata.attrs, ...metadata.props}" />
   </div>
 </template>
 
