@@ -1,23 +1,29 @@
 <template>
-  <div>Proxy</div>
+  <div ref="el" />
 </template>
 
 <script setup lang="ts">
-  import { metdata } from '~/utils/Float'
+  import { metdata, proyxEl } from '~/utils/Float'
   const props = defineProps<{
     modelValue?: boolean
     testValue?: string
   }>()
 
   const attrs = useAttrs()
+  const el = ref<HTMLElement | null>()
 
   metdata.props = props
   metdata.attrs = attrs
+
+  // 组件挂载的时候，设置 proxyEl
+  onMounted(() => {
+    proyxEl.value = el.value
+  })
 </script>
 
-<script lang="ts">
-  // 重要将上层传递下来的 attrs 在本组件不继承 避免样式影响这个代理组件。
+<!-- <script lang="ts">
+  // 将上层传递下来的 attrs 在本组件不继承 避免样式影响这个代理组件。
   export default {
     inheritAttrs: false
   }
-</script>
+</script> -->

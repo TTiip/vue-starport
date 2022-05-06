@@ -4,6 +4,9 @@ const metdata = reactive({
   attrs: {}
 })
 
+const proyxEl = ref<HTMLElement | null>()
+
 export {
-  metdata
+  metdata,
+  proyxEl
 }
