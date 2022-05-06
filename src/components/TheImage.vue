@@ -8,7 +8,4 @@
 
 <script	lang="ts" setup>
   const a = $ref(true)
-
-  const props = defineProps<{}>()
-  console.log(props)
 </script>
