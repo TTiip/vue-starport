@@ -7,7 +7,7 @@
     <button m-3 text-sm btn @click="toggle">
       toggle
     </button>
-    <FloatProxy :class="mode ? 'w-30 h-30' : 'w-60 h-60'" rounded-xl />
+    <FloatProxy :class="mode ? 'w-30 h-30' : 'w-60 h-30'" rounded-xl />
   </div>
 </template>
 
