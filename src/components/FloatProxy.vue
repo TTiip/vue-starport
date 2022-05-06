@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-  import { metdata, proyxEl } from '~/utils/Float'
+  import { metadata, proyxEl } from '~/utils/Float'
   const props = defineProps<{
     modelValue?: boolean
     testValue?: string
@@ -12,8 +12,8 @@
   const attrs = useAttrs()
   const el = ref<HTMLElement | null>()
 
-  metdata.props = props
-  metdata.attrs = attrs
+  metadata.props = props
+  metadata.attrs = attrs
 
   // 组件挂载的时候，设置 proxyEl
   onMounted(() => {

@@ -1,13 +1,13 @@
 <template>
   <div :style="style">
     <!-- 这里的 v-bind 绑定attrs 将外部传入的属性绑定到 slot 对应的组件上 -->
-    <slot v-bind="metdata.attrs" />
+    <slot v-bind="metadata.attrs" />
   </div>
 </template>
 
 <script setup lang="ts">
   import type { StyleValue } from 'vue'
-  import { metdata, proyxEl } from '~/utils/Float'
+  import { metadata, proyxEl } from '~/utils/Float'
 
   // 方法一
   // vueuse 提供的方法去监听 proxyEl 的变化，然后更新 rect
