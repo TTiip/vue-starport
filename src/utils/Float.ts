@@ -58,7 +58,8 @@ function creatFloating<T extends Component> (component: T) {
       // }))
 
       // 参数分别为 h(元素 或 组件， props 或 attrs， children 或 slots)
-      return () => h('div', { style: style.value }, [h(component, { ...metadata.props, ...metadata.attrs }, slots.default)])
+      // 直接传入 component 就报错，使用 component as any 解决
+      return () => h('div', { style: style.value }, [h(component as any, { ...metadata.props, ...metadata.attrs }, slots.default)])
     }
   })
 
