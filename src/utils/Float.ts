@@ -1,7 +1,8 @@
 import type { Component, StyleValue } from 'vue'
 import { h } from 'vue'
 
-// // 公用组件状态存储对应的组件的状态
+// 第一种使用 .vue 文件 生成实例的方法。
+// 公用组件状态存储对应的组件的状态
 const metadata = reactive({
   props: {},
   attrs: {}
@@ -9,6 +10,7 @@ const metadata = reactive({
 
 const proyxEl = ref<HTMLElement | null>()
 
+// 第二种使用 Hooks 生成实例的方法。
 // 封装统一的 Hooks
 function creatFloating<T extends Component> (component: T) {
   const metadata = reactive({
